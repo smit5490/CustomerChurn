@@ -27,4 +27,4 @@ active - Is the subscription still active?
 
 **Scripts**:
 
-The Jupyter notebook in this repository performs an exploratory analysis, an application of a decision tree and random forest model to the data, and provides some actionable insights for the business.
+The iPython notebook in this repository performs an exploratory analysis, an application of a decision tree and random forest model to the data, and provides some actionable insights for the business.
