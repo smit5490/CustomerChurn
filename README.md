@@ -1,30 +1,50 @@
-# Predicting Subscription Churn
+# Understanding Customer Churn
 
-**Task**: Analyze churn rate for a subscription-based personal finance business.
+_Note: This repository was completely updated and used as the first project in Udacity's Data Scientist Nanodegree program._
 
-Churn rate is defined as the proportion of members who cancel their subscription. A 20% churn rate can also be referred to as an 80% retention rate.
+### Task: 
 
-**Goal**: 
+Analyze churn rate for a subscription-based personal finance business. The churn rate is defined as the proportion of members who cancel their subscription. For example, a 20% churn rate can also be referred to as an 80% retention rate.
 
-* Calculate average churn rate over the last 9 months for each price tier.
-* Predict the number of currently active subscriptions that will still be active next month.
-* Predict the number of currently active subscriptions that will still be active in 3 months.
-* Build a separate model that predicts tenure based on price tier, source, and country.
-* Provide actionable insights to the business.
+### Data:
 
-**Data**:
+In the data folder, all data is in one flat file called *9mo_pull.csv*, which contains data for all members who 
+subscribed to a personal finance SaaS exactly 9 months ago. It does not contain data for members who subscribed since 
+then. In other words, each member in the dataset has the same start date. As a result, this data is considered to be 
+"right censored". 
 
-The data is in one table called 9mo_pull.csv. It contains data for all members who subscribed to a personal finance SaaS 9 months ago. It does not contain data for members who subscribed since then. In other words, each member in the dataset has the same start date.
+**Data Dictionary:**
 
-**Data Dictionary**:
+*member_id* - Unique ID of the user.  
+*tier* - Price tier (Silver, Gold, or Platinum).  
+*country* - Member country.  
+*source* - Original acquisition channel.  
+*tenure* - Number of cycles billed. Min is 1. Max is 9.  
+*active* - Is the subscription still active?  
 
-member_id - Unique ID of the user.  
-tier - Price tier (Silver, Gold, or Platinum).  
-country - Member country.  
-source - Original acquisition channel.  
-tenure - Number of cycles billed. Min is 1. Max is 9.  
-active - Is the subscription still active?  
 
-**Scripts**:
+### Code:
+There is a single notebook in the code folder that contains the entire end-to-end analysis and modeling of the data set. 
+There are some old notebooks in the old notebooks folder that explore other packages/approaches, but are not directly 
+relevant the Udacity project.
 
-The iPython notebook in this repository performs an exploratory analysis, an application of a decision tree and random forest model to the data, and provides some actionable insights for the business.
+### Project Setup:
+After creating a clean Python/Conda virtual environment all of the project's dependencies are in the requirements.txt file which 
+can be installed using:
+
+`pip install -r requirements.txt`
+
+### Summary of Analysis
+Customers in the silver tier had the lowest churn and longest tenure of all three tiers.
+A similar trend was seen among customers that were referred to the company's software. 
+T
+wo survival models were explored to forecast enrollments and understand the impact of a customer's characteristics on 
+their tenure:
+
+**Modified Cox Proportional Hazard Model:** A modified version of the Cox Proportional Hazards model where the baseline 
+hazard includes cubic spline terms. This model allows for extrapolation, but its predictions vary widely depending on 
+the number of splines used (while still reporting very similar concordance indices).
+
+**Weibull Accelerated Failure Time Model:** A parameteric survival analysis model based on the Weibull distribution.
+
+In an effort to balance accuracy and interpretability, the Weibull model will be used for forecasting.
