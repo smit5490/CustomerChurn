@@ -22,7 +22,6 @@ then. In other words, each member in the dataset has the same start date. As a r
 *tenure* - Number of cycles billed. Min is 1. Max is 9.  
 *active* - Is the subscription still active?  
 
-
 ### Code:
 There is a single notebook in the code folder that contains the entire end-to-end analysis and modeling of the data set. 
 There are some old notebooks in the old notebooks folder that explore other packages/approaches, but are not directly 
@@ -36,9 +35,10 @@ can be installed using:
 
 ### Summary of Analysis
 Customers in the silver tier had the lowest churn and longest tenure of all three tiers.
-A similar trend was seen among customers that were referred to the company's software. 
-T
-wo survival models were explored to forecast enrollments and understand the impact of a customer's characteristics on 
+Customers that were referred to the company's software versus through partnerships or were organically generated also 
+experienced the longest tenure.
+ 
+Two survival models were explored to forecast enrollments and understand the impact of a customer's characteristics on 
 their tenure:
 
 **Modified Cox Proportional Hazard Model:** A modified version of the Cox Proportional Hazards model where the baseline 
@@ -47,4 +47,4 @@ the number of splines used (while still reporting very similar concordance indic
 
 **Weibull Accelerated Failure Time Model:** A parameteric survival analysis model based on the Weibull distribution.
 
-In an effort to balance accuracy and interpretability, the Weibull model will be used for forecasting.
+In an effort to balance accuracy and interpretability, the Weibull model was used for forecasting.
