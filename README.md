@@ -8,7 +8,7 @@ file which can be installed using:
 
 `pip install -r requirements.txt`
 
-All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
+The Python version used was 3.8.1. All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
 
 ### Motivation: 
 There are two main challenges when running a subscription-based business, getting customers and retaining them. This 
