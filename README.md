@@ -39,7 +39,7 @@ subscribed to a personal finance SaaS exactly 9 months ago. It does not contain 
 then. In other words, each member in the dataset has the same start date. As a result, this data is considered to be 
 "right censored". 
 
-**Data Dictionary:**
+**Data Dictionary:**  
 *member_id* - Unique ID of the user.  
 *tier* - Price tier (Silver, Gold, or Platinum).  
 *country* - Member country.  
