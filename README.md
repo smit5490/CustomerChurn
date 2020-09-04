@@ -2,8 +2,15 @@
 *Note: This repository was completely updated using survival analysis techniques and used as the first project in 
 Udacity's Data Scientist Nanodegree program.*
  
+### Project Setup:
+After creating a clean Python/Conda virtual environment all of the project's dependencies are in the requirements.txt 
+file which can be installed using:
 
-### Task: 
+`pip install -r requirements.txt`
+
+All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
+
+### Motivation: 
 There are two main challenges when running a subscription-based business, getting customers and retaining them. This 
 project focuses on the latter by analyzing customer enrollment characteristics and their impact on churn rate for a 
 subscription-based personal finance business.
@@ -27,7 +34,7 @@ In an effort to balance accuracy and interpretability, the Weibull model was use
 
 ### Data:
 
-In the data folder, all data is in one flat file called *9mo_pull.csv*, which contains data for all members who 
+In the *data* folder, all data is in one flat file called *9mo_pull.csv*, which contains data for all members who 
 subscribed to a personal finance SaaS exactly 9 months ago. It does not contain data for members who subscribed since 
 then. In other words, each member in the dataset has the same start date. As a result, this data is considered to be 
 "right censored". 
@@ -42,14 +49,6 @@ then. In other words, each member in the dataset has the same start date. As a r
 *active* - Is the subscription still active?  
 
 ### Code:
-There is a single notebook in the code folder that contains the entire end-to-end analysis and modeling of the data set. 
+There is a single notebook in the *code* folder that contains the entire end-to-end analysis and modeling of the data set. 
 There are some old notebooks in the *old notebooks* folder that explore other packages/approaches, but are not directly 
 relevant the Udacity project.
-
-### Project Setup:
-After creating a clean Python/Conda virtual environment all of the project's dependencies are in the requirements.txt 
-file which can be installed using:
-
-`pip install -r requirements.txt`
-
-All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
