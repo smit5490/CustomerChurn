@@ -3,12 +3,12 @@
 Udacity's Data Scientist Nanodegree program.*
  
 ### Project Setup:
-After creating a clean Python/Conda virtual environment all of the project's dependencies are in the requirements.txt 
+The Python version used was 3.8.1. After creating a clean Python/Conda virtual environment all of the project's dependencies are in the requirements.txt 
 file which can be installed using:
 
 `pip install -r requirements.txt`
 
-The Python version used was 3.8.1. All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
+All of the survival modeling was done using the [lifelines](https://lifelines.readthedocs.io/en/latest/) package.
 
 ### Motivation: 
 There are two main challenges when running a subscription-based business, getting customers and retaining them. This 
@@ -40,7 +40,6 @@ then. In other words, each member in the dataset has the same start date. As a r
 "right censored". 
 
 **Data Dictionary:**
-
 *member_id* - Unique ID of the user.  
 *tier* - Price tier (Silver, Gold, or Platinum).  
 *country* - Member country.  
@@ -51,4 +50,4 @@ then. In other words, each member in the dataset has the same start date. As a r
 ### Code:
 There is a single notebook in the *code* folder that contains the entire end-to-end analysis and modeling of the data set. 
 There are some old notebooks in the *old notebooks* folder that explore other packages/approaches, but are not directly 
-relevant the Udacity project.
+relevant to the Udacity project.
